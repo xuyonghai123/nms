@@ -2,13 +2,17 @@ package com.xuyh.nms.modules.sys.web;
 
 import com.xuyh.nms.modules.sys.dao.UserMapper;
 import com.xuyh.nms.modules.sys.entity.Admin;
+import com.xuyh.nms.modules.sys.entity.Article;
 import com.xuyh.nms.modules.sys.entity.Data;
 import com.xuyh.nms.modules.sys.entity.User;
-import com.xuyh.nms.modules.sys.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:9527")
 @RestController
@@ -54,5 +58,26 @@ public class LogController {
         User user =  userMapper.findUserByName("admin");
         System.out.println("user:"+user);
         return "success";
+    }
+
+    @RequestMapping(value = "/article/list",method = RequestMethod.GET)
+    public List<Article> getArticle(){
+        List<Article> articles = new LinkedList<>();
+        for (int i = 0; i <10 ; i++) {
+            Article article = new Article();
+            article.setAuditor("12312312312313");
+            article.setAuthor("xuyh");
+            article.setDisplay_time("123");
+            article.setForecast("123123123");
+            article.setId(i);
+            article.setImportance("123123");
+            article.setPageviews("123123");
+            article.setStatus("1");
+            article.setTimestamp(new Date());
+            article.setTitle("sahdiahsdiad");
+            article.setType("123123123");
+            articles.add(article);
+        }
+        return articles;
     }
 }
