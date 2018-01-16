@@ -7,12 +7,20 @@ import com.xuyh.nms.modules.sys.entity.Data;
 import com.xuyh.nms.modules.sys.entity.User;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:9527")
 @RestController
@@ -23,8 +31,10 @@ public class LogController {
 
     @ApiOperation(value="获取用户列表", notes="")
     @RequestMapping(value = "/login/login",method = RequestMethod.POST)
-    public Admin login(@RequestBody Data data){
-//        System.out.println("username:"+username);
+    public Admin login(@RequestBody Data data) {
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(data.getUsername(),data.getPassword());
+        subject.login(usernamePasswordToken);
         System.out.println("username:"+data.getUsername());
         System.out.println("password:"+data.getPassword());
         System.out.println("登录请求");
@@ -79,5 +89,35 @@ public class LogController {
             articles.add(article);
         }
         return articles;
+    }
+
+
+    @RequestMapping(value="/login",method=RequestMethod.POST)
+    public String login(HttpServletRequest request, Map<String, Object> map) throws Exception {
+        System.out.println("HomeController.login()");
+        // 登录失败从request中获取shiro处理的异常信息。
+        // shiroLoginFailure:就是shiro异常类的全类名.
+        String exception = (String) request.getAttribute("shiroLoginFailure");
+
+        System.out.println("exception=" + exception);
+        String msg = "";
+        if (exception != null) {
+            if (UnknownAccountException.class.getName().equals(exception)) {
+                System.out.println("UnknownAccountException -- > 账号不存在：");
+                msg = "UnknownAccountException -- > 账号不存在：";
+            } else if (IncorrectCredentialsException.class.getName().equals(exception)) {
+                System.out.println("IncorrectCredentialsException -- > 密码不正确：");
+                msg = "IncorrectCredentialsException -- > 密码不正确：";
+            } else if ("kaptchaValidateFailed".equals(exception)) {
+                System.out.println("kaptchaValidateFailed -- > 验证码错误");
+                msg = "kaptchaValidateFailed -- > 验证码错误";
+            } else {
+                msg = "else >> "+exception;
+                System.out.println("else -- >" + exception);
+            }
+        }
+        map.put("msg", msg);
+        // 此方法不处理登录成功,由shiro进行处理.
+        return "/login";
     }
 }

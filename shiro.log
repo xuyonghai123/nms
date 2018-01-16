@@ -10158,3 +10158,130 @@ Unconditional classes:
 2018-01-12 16:18:32.346 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
 2018-01-12 16:18:32.346 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
 2018-01-12 16:18:32.346 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:00:54.633 DEBUG 77892 --- [http-nio-8080-exec-1] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:00:54.635 DEBUG 77892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing OPTIONS request for [/user/info]
+2018-01-12 18:00:54.636 DEBUG 77892 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:00:54.636 DEBUG 77892 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:00:54.637 DEBUG 77892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:00:54.637 DEBUG 77892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:00:54.637 DEBUG 77892 --- [http-nio-8080-exec-1] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:00:54.712 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:00:54.712 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:00:54.712 DEBUG 77892 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:00:54.712 DEBUG 77892 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:00:54.713 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:00:54.716 DEBUG 77892 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@1c36b48c] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:00:54.716 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:00:54.716 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:00:54.716 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:01:57.144 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:01:57.144 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:01:57.146 DEBUG 77892 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:01:57.146 DEBUG 77892 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:01:57.146 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:01:57.149 DEBUG 77892 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@1b2f2fd9] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:01:57.150 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:01:57.150 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:01:57.151 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:10:37.114 DEBUG 77892 --- [http-nio-8080-exec-6] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:10:37.114 DEBUG 77892 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:10:37.114 DEBUG 77892 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:10:37.114 DEBUG 77892 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:10:37.114 DEBUG 77892 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:10:37.117 DEBUG 77892 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@5051ce02] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:10:37.117 DEBUG 77892 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:10:37.117 DEBUG 77892 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:10:37.118 DEBUG 77892 --- [http-nio-8080-exec-6] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:12:29.116 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:12:29.116 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing OPTIONS request for [/user/info]
+2018-01-12 18:12:29.116 DEBUG 77892 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:12:29.116 DEBUG 77892 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:12:29.116 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:12:29.116 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:12:29.117 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:12:29.172 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:12:29.172 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:12:29.172 DEBUG 77892 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:12:29.172 DEBUG 77892 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:12:29.172 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:12:29.174 DEBUG 77892 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@6ffe0678] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:12:29.174 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:12:29.175 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:12:29.175 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:12:34.435 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:12:34.435 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:12:34.435 DEBUG 77892 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:12:34.436 DEBUG 77892 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:12:34.436 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:12:34.437 DEBUG 77892 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@6162a344] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:12:34.437 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:12:34.438 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:12:34.438 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:13:41.242 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:13:41.242 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:13:41.242 DEBUG 77892 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:13:41.242 DEBUG 77892 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:13:41.243 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:13:41.247 DEBUG 77892 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@696fdd7e] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:13:41.247 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:13:41.247 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:13:41.248 DEBUG 77892 --- [http-nio-8080-exec-2] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:14:26.880 DEBUG 77892 --- [http-nio-8080-exec-3] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:14:26.880 DEBUG 77892 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:14:26.880 DEBUG 77892 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:14:26.880 DEBUG 77892 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:14:26.880 DEBUG 77892 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:14:26.882 DEBUG 77892 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@2c4183d9] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:14:26.883 DEBUG 77892 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:14:26.883 DEBUG 77892 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:14:26.883 DEBUG 77892 --- [http-nio-8080-exec-3] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:14:29.613 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:14:29.614 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:14:29.614 DEBUG 77892 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:14:29.614 DEBUG 77892 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:14:29.614 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:14:29.635 DEBUG 77892 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@70910fcb] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:14:29.635 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:14:29.635 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:14:29.635 DEBUG 77892 --- [http-nio-8080-exec-4] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:15:00.103 DEBUG 77892 --- [http-nio-8080-exec-5] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-12 18:15:00.103 DEBUG 77892 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-12 18:15:00.103 DEBUG 77892 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-12 18:15:00.103 DEBUG 77892 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-12 18:15:00.104 DEBUG 77892 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-12 18:15:00.105 DEBUG 77892 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@4ca8d925] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-12 18:15:00.105 DEBUG 77892 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-12 18:15:00.105 DEBUG 77892 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-12 18:15:00.105 DEBUG 77892 --- [http-nio-8080-exec-5] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.426 DEBUG 77892 --- [http-nio-8080-exec-7] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.426 DEBUG 77892 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing OPTIONS request for [/login/login]
+2018-01-15 10:13:37.426 DEBUG 77892 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /login/login
+2018-01-15 10:13:37.426 DEBUG 77892 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.login(com.xuyh.nms.modules.sys.entity.Data)]
+2018-01-15 10:13:37.427 DEBUG 77892 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-15 10:13:37.427 DEBUG 77892 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-15 10:13:37.427 DEBUG 77892 --- [http-nio-8080-exec-7] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.432 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.432 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing POST request for [/login/login]
+2018-01-15 10:13:37.432 DEBUG 77892 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /login/login
+2018-01-15 10:13:37.432 DEBUG 77892 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.login(com.xuyh.nms.modules.sys.entity.Data)]
+2018-01-15 10:13:37.433 DEBUG 77892 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read [class com.xuyh.nms.modules.sys.entity.Data] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-15 10:13:37.434 DEBUG 77892 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@c2f32] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-15 10:13:37.434 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-15 10:13:37.434 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-15 10:13:37.434 DEBUG 77892 --- [http-nio-8080-exec-8] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.450 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.450 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing OPTIONS request for [/user/info]
+2018-01-15 10:13:37.450 DEBUG 77892 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-15 10:13:37.450 DEBUG 77892 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-15 10:13:37.451 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-15 10:13:37.451 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-15 10:13:37.451 DEBUG 77892 --- [http-nio-8080-exec-9] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.459 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.b.w.f.OrderedRequestContextFilter    : Bound request context to thread: org.apache.catalina.connector.RequestFacade@f886956
+2018-01-15 10:13:37.459 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : DispatcherServlet with name 'dispatcherServlet' processing GET request for [/user/info]
+2018-01-15 10:13:37.459 DEBUG 77892 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /user/info
+2018-01-15 10:13:37.459 DEBUG 77892 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public com.xuyh.nms.modules.sys.entity.Admin com.xuyh.nms.modules.sys.web.LogController.userInfo()]
+2018-01-15 10:13:37.459 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Last-Modified value for [/user/info] is: -1
+2018-01-15 10:13:37.463 DEBUG 77892 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Written [com.xuyh.nms.modules.sys.entity.Admin@66391b08] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@59bbe88a]
+2018-01-15 10:13:37.463 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018-01-15 10:13:37.463 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Successfully completed request
+2018-01-15 10:13:37.463 DEBUG 77892 --- [http-nio-8080-exec-10] o.s.b.w.f.OrderedRequestContextFilter    : Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@f886956
