@@ -48,7 +48,7 @@ public class LogController {
     }
 
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
-    @RequestMapping(value = "/user/info",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/info",method = RequestMethod.POST)
     public Admin userInfo(){
         System.out.println("获取信息请求");
         Admin admin1 = new Admin();
@@ -91,6 +91,10 @@ public class LogController {
         return articles;
     }
 
+    @RequestMapping(value = "/api/findOrder",method = RequestMethod.POST)
+    public String findOrder(){
+        return "test";
+    }
 
     @RequestMapping(value="/login",method=RequestMethod.POST)
     public String login(HttpServletRequest request, Map<String, Object> map) throws Exception {

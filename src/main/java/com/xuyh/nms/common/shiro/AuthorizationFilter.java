@@ -15,11 +15,11 @@ public class AuthorizationFilter extends FormAuthenticationFilter {
         JSONObject jsonObject = new JSONObject();
 //        jsonObject.put("returnCode", ErrorEnum.E_20011.getErrorCode());
 //        jsonObject.put("returnMsg", ErrorEnum.E_20011.getErrorMsg());
-        jsonObject.put("role","admin");
-        jsonObject.put("token","admin");
-        jsonObject.put("introduction","我是超级管理员1");
-        jsonObject.put("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
-        jsonObject.put("name","Super Admin");
+//        jsonObject.put("role","admin");
+//        jsonObject.put("token","admin");
+//        jsonObject.put("introduction","我是超级管理员1");
+//        jsonObject.put("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
+//        jsonObject.put("name","Super Admin");
         PrintWriter out = null;
         HttpServletResponse res = (HttpServletResponse) response;
         try {

@@ -1,5 +1,7 @@
 package com.xuyh.nms.common.shiro;
 
+import com.xuyh.nms.modules.sys.dao.UserMapper;
+import com.xuyh.nms.modules.sys.entity.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -11,25 +13,29 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MyShiroRealm extends AuthorizingRealm {
     private static final Logger logger = LoggerFactory.getLogger(MyShiroRealm.class);
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        authorizationInfo.addStringPermission("asdasd");
         return authorizationInfo;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        System.out.println("22222222222222222222222222222222222222222");
-        logger.info("MyShiroRealm:"+authenticationToken);
         String userName = (String) authenticationToken.getPrincipal();
-        logger.info("userInfo:",userName);
-
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo("admin","111111",getName());
-        SecurityUtils.getSubject().getSession().setAttribute("JSESSIONID","22B983D91CBDF95DD71FD4AAE9BCAA5B");
+        String password = new String((char[]) authenticationToken.getCredentials());
+        logger.info("userName:"+userName);
+        logger.info("password:"+password);
+        User user =  userMapper.findUserByName("admin");
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(userName,password,getName());
+        SecurityUtils.getSubject().getSession().setAttribute("userInfo",user);
         return authenticationInfo;
     }
 }
