@@ -1,10 +1,7 @@
 package com.xuyh.nms.modules.sys.web;
 
 import com.xuyh.nms.modules.sys.dao.UserMapper;
-import com.xuyh.nms.modules.sys.entity.Admin;
-import com.xuyh.nms.modules.sys.entity.Article;
-import com.xuyh.nms.modules.sys.entity.Data;
-import com.xuyh.nms.modules.sys.entity.User;
+import com.xuyh.nms.modules.sys.entity.*;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
@@ -17,12 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@CrossOrigin(origins = "http://localhost:9527")
+//@CrossOrigin(origins = "http://localhost:9527")
 @RestController
 public class LogController {
 
@@ -92,8 +86,23 @@ public class LogController {
     }
 
     @RequestMapping(value = "/api/findOrder",method = RequestMethod.POST)
-    public String findOrder(){
-        return "test";
+    public List<Datas> findOrder(){
+        List<Datas> list = new ArrayList();
+        Datas datas = new Datas();
+        datas.setId(1);
+        datas.setName("xuyh");
+        datas.setDate(new Date());
+        datas.setAddress("qweihdishdi");
+        datas.setZip("11111111");
+        Datas datas1 = new Datas();
+        datas1.setId(2);
+        datas1.setName("yhj");
+        datas1.setDate(new Date());
+        datas1.setAddress("qqqqqqqqqqqqq");
+        datas1.setZip("2222222222222");
+        list.add(datas);
+        list.add(datas1);
+        return list;
     }
 
     @RequestMapping(value="/login",method=RequestMethod.POST)

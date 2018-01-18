@@ -33,8 +33,8 @@ public class MyShiroRealm extends AuthorizingRealm {
         String password = new String((char[]) authenticationToken.getCredentials());
         logger.info("userName:"+userName);
         logger.info("password:"+password);
-        User user =  userMapper.findUserByName("admin");
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(userName,password,getName());
+        User user =  userMapper.findUserByName(userName);
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),getName());
         SecurityUtils.getSubject().getSession().setAttribute("userInfo",user);
         return authenticationInfo;
     }
