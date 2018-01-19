@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuyh.nms.modules.sys.dao.DataMapper">
+  <resultMap id="BaseResultMap" type="com.xuyh.nms.modules.sys.entity.Datas">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+      id,date,name,address
+  </sql>
+
+  <select id="findData" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from data
+  </select>
+</mapper>

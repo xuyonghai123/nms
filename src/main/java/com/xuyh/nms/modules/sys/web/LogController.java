@@ -1,5 +1,7 @@
 package com.xuyh.nms.modules.sys.web;
 
+import com.xuyh.nms.common.shiro.MyShiroRealm;
+import com.xuyh.nms.modules.sys.dao.DataMapper;
 import com.xuyh.nms.modules.sys.dao.UserMapper;
 import com.xuyh.nms.modules.sys.entity.*;
 import io.swagger.annotations.ApiImplicitParam;
@@ -9,6 +11,8 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +23,13 @@ import java.util.*;
 //@CrossOrigin(origins = "http://localhost:9527")
 @RestController
 public class LogController {
+    private static final Logger logger = LoggerFactory.getLogger(LogController.class);
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private DataMapper dataMapper;
 
     @ApiOperation(value="获取用户列表", notes="")
     @RequestMapping(value = "/login/login",method = RequestMethod.POST)
@@ -29,9 +37,9 @@ public class LogController {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(data.getUsername(),data.getPassword());
         subject.login(usernamePasswordToken);
-        System.out.println("username:"+data.getUsername());
-        System.out.println("password:"+data.getPassword());
-        System.out.println("登录请求");
+        logger.info("username:"+data.getUsername());
+        logger.info("password:"+data.getPassword());
+        logger.info("登录请求");
         Admin admin = new Admin();
         admin.setAvatar("https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
         admin.setRole("admin");
@@ -44,7 +52,7 @@ public class LogController {
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
     @RequestMapping(value = "/user/info",method = RequestMethod.POST)
     public Admin userInfo(){
-        System.out.println("获取信息请求");
+        logger.info("获取信息请求");
         Admin admin1 = new Admin();
         admin1.setAvatar("http://img.zcool.cn/community/016a67572594346ac7253812faee75.gif");
         admin1.setRole("admin");
@@ -58,9 +66,11 @@ public class LogController {
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/login/logout",method = RequestMethod.POST)
     public String logOut(){
-        System.out.println("登出系统");
+        logger.info("登出系统");
+        List<Datas> list = dataMapper.findData();
         User user =  userMapper.findUserByName("admin");
-        System.out.println("user:"+user);
+        logger.info("user:"+user);
+        logger.info("list:"+list);
         return "success";
     }
 
@@ -107,26 +117,26 @@ public class LogController {
 
     @RequestMapping(value="/login",method=RequestMethod.POST)
     public String login(HttpServletRequest request, Map<String, Object> map) throws Exception {
-        System.out.println("HomeController.login()");
+        logger.info("HomeController.login()");
         // 登录失败从request中获取shiro处理的异常信息。
         // shiroLoginFailure:就是shiro异常类的全类名.
         String exception = (String) request.getAttribute("shiroLoginFailure");
 
-        System.out.println("exception=" + exception);
+        logger.info("exception=" + exception);
         String msg = "";
         if (exception != null) {
             if (UnknownAccountException.class.getName().equals(exception)) {
-                System.out.println("UnknownAccountException -- > 账号不存在：");
+                logger.info("UnknownAccountException -- > 账号不存在：");
                 msg = "UnknownAccountException -- > 账号不存在：";
             } else if (IncorrectCredentialsException.class.getName().equals(exception)) {
-                System.out.println("IncorrectCredentialsException -- > 密码不正确：");
+                logger.info("IncorrectCredentialsException -- > 密码不正确：");
                 msg = "IncorrectCredentialsException -- > 密码不正确：";
             } else if ("kaptchaValidateFailed".equals(exception)) {
-                System.out.println("kaptchaValidateFailed -- > 验证码错误");
+                logger.info("kaptchaValidateFailed -- > 验证码错误");
                 msg = "kaptchaValidateFailed -- > 验证码错误";
             } else {
                 msg = "else >> "+exception;
-                System.out.println("else -- >" + exception);
+                logger.info("else -- >" + exception);
             }
         }
         map.put("msg", msg);
