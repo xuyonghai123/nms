@@ -47,7 +47,7 @@ public class LogController {
         return admin;
     }
 
-    @ApiOperation(value="创建用户", notes="根据User对象创建用户")
+    @ApiOperation(value="获取用户信息", notes="获取用户信息")
     @RequestMapping(value = "/user/info",method = RequestMethod.POST)
     public Admin userInfo(){
         logger.info("获取信息请求");
@@ -60,7 +60,7 @@ public class LogController {
         return admin1;
     }
 
-    @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
+    @ApiOperation(value="登出系统", notes="登出系统")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/login/logout",method = RequestMethod.POST)
     public String logOut(){
@@ -72,6 +72,8 @@ public class LogController {
         return "success";
     }
 
+    @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/article/list",method = RequestMethod.GET)
     public List<Article> getArticle(){
         List<Article> articles = new LinkedList<>();
@@ -93,6 +95,8 @@ public class LogController {
         return articles;
     }
 
+    @ApiOperation(value="获取订单", notes="根据id来获取订单")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/api/findOrder",method = RequestMethod.POST)
     public List<Datas> findOrder(){
         List<Datas> list = new ArrayList<>();
@@ -113,6 +117,8 @@ public class LogController {
         return list;
     }
 
+    @ApiOperation(value="登录", notes="登录")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value="/login",method=RequestMethod.POST)
     public String login(HttpServletRequest request, Map<String, Object> map) {
         logger.info("HomeController.login()");
