@@ -31,8 +31,12 @@ public class ShiroConfiguration {
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/login/logout","anon");
         filterChainDefinitionMap.put("/login/login","anon");
+        filterChainDefinitionMap.put("/swagger-ui.html","anon");
+        filterChainDefinitionMap.put("/webjars/**","anon");
+        filterChainDefinitionMap.put("/swagger-resources/**","anon");
+        filterChainDefinitionMap.put("/v2/**","anon");
         filterChainDefinitionMap.put("/user/info","anon");
-        filterChainDefinitionMap.put("/**","authc");
+//        filterChainDefinitionMap.put("/**","authc");
         shiroFilterFactoryBean.setLoginUrl("/login/login");
         shiroFilterFactoryBean.setSuccessUrl("/user/info");
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
