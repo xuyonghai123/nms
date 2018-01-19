@@ -7,5 +7,5 @@ import java.util.List;
 
 @Service
 public interface DataMapper {
-    public List<Datas> findData();
+    List<Datas> findData();
 }

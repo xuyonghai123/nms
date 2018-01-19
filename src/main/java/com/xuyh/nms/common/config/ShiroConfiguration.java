@@ -22,7 +22,7 @@ public class ShiroConfiguration {
 
     @Bean
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager){
-        System.out.println("开始ShiroConfiguration.shirFilter()");
+        logger.info("开始ShiroConfiguration.shirFilter()");
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String, Filter> filterMap = new LinkedHashMap<>();
@@ -49,8 +49,7 @@ public class ShiroConfiguration {
 
     @Bean
     public MyShiroRealm myShiroRealm(){
-        MyShiroRealm myShiroRealm = new MyShiroRealm();
-        return myShiroRealm;
+        return new MyShiroRealm();
     }
 
     @Bean

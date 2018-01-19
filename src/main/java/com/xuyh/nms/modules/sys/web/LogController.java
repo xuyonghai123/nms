@@ -1,6 +1,5 @@
 package com.xuyh.nms.modules.sys.web;
 
-import com.xuyh.nms.common.shiro.MyShiroRealm;
 import com.xuyh.nms.modules.sys.dao.DataMapper;
 import com.xuyh.nms.modules.sys.dao.UserMapper;
 import com.xuyh.nms.modules.sys.entity.*;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
-//@CrossOrigin(origins = "http://localhost:9527")
 @RestController
 public class LogController {
     private static final Logger logger = LoggerFactory.getLogger(LogController.class);
@@ -31,7 +29,7 @@ public class LogController {
     @Autowired
     private DataMapper dataMapper;
 
-    @ApiOperation(value="获取用户列表", notes="")
+    @ApiOperation(value="登录系统", notes="shiro权限登录")
     @RequestMapping(value = "/login/login",method = RequestMethod.POST)
     public Admin login(@RequestBody Data data) {
         Subject subject = SecurityUtils.getSubject();
@@ -97,7 +95,7 @@ public class LogController {
 
     @RequestMapping(value = "/api/findOrder",method = RequestMethod.POST)
     public List<Datas> findOrder(){
-        List<Datas> list = new ArrayList();
+        List<Datas> list = new ArrayList<>();
         Datas datas = new Datas();
         datas.setId(1);
         datas.setName("xuyh");
@@ -116,7 +114,7 @@ public class LogController {
     }
 
     @RequestMapping(value="/login",method=RequestMethod.POST)
-    public String login(HttpServletRequest request, Map<String, Object> map) throws Exception {
+    public String login(HttpServletRequest request, Map<String, Object> map) {
         logger.info("HomeController.login()");
         // 登录失败从request中获取shiro处理的异常信息。
         // shiroLoginFailure:就是shiro异常类的全类名.

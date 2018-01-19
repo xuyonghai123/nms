@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserMapper {
-    public User findUserByName(String username);
+    User findUserByName(String username);
 }

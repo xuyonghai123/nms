@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ZabbixUtils {
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+    private static final Logger logger = LoggerFactory.getLogger(ZabbixUtils.class);
     private static final String ZBX_URL = "http://45.77.68.69:8080/zabbix/api_jsonrpc.php";
     private static final String USERNAME = "Admin";
     private static final String PASSWORD = "zabbix";
@@ -26,15 +26,15 @@ public class ZabbixUtils {
             //获取Zabbix的item
             Item item = zabbixApi.item();
             ItemGetResponse itemGetResponse = item.get(itemGetRequest);
-            System.out.println("itemSize:" + itemGetResponse.getResult().size());
+            logger.info("itemSize:" + itemGetResponse.getResult().size());
             for (int i = 0; i < itemGetResponse.getResult().size(); i++) {
-                System.out.println("item" + i + ":" + itemGetResponse.getResult().get(i).getName());
+                logger.info("item" + i + ":" + itemGetResponse.getResult().get(i).getName());
             }
             //获取zabbix的host
-            System.out.println("--------------------------------");
+            logger.info("--------------------------------");
             Host host = zabbixApi.host();
             HostGetResponse hostGetResponse = host.get(hostGetRequest);
-            System.out.println("host:" + hostGetResponse.getResult().get(0).getName());
+            logger.info("host:" + hostGetResponse.getResult().get(0).getName());
 
         } catch (ZabbixApiException e) {
             e.printStackTrace();
