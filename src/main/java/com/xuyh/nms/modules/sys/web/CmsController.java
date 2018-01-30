@@ -12,14 +12,14 @@ import java.util.Enumeration;
 public class CmsController {
 
     @RequestMapping(value = "/form/submit",method = RequestMethod.POST)
-    public void form(@RequestBody Form form) throws IOException {
+    public void form(@RequestBody Form form,HttpServletRequest request) throws IOException {
         System.out.println(form.getName());
         System.out.println(form.getDate1());
-//        Enumeration<String> paraNames=request.getParameterNames();
-//        for(Enumeration e=paraNames;e.hasMoreElements();) {
-//            String thisName = e.nextElement().toString();
-//            String thisValue = request.getParameter(thisName);
-//            System.out.println(thisName + "--------------" + thisValue);
-//        }
+        Enumeration<String> paraNames=request.getParameterNames();
+        for(Enumeration e=paraNames;e.hasMoreElements();) {
+            String thisName = e.nextElement().toString();
+            String thisValue = request.getParameter(thisName);
+            System.out.println(thisName + "--------------" + thisValue);
+        }
     }
 }

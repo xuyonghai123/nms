@@ -34,9 +34,9 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/swagger-ui.html","anon");
         filterChainDefinitionMap.put("/webjars/**","anon");
         filterChainDefinitionMap.put("/swagger-resources/**","anon");
-        filterChainDefinitionMap.put("/v2/**","anon");
         filterChainDefinitionMap.put("/user/info","anon");
-//        filterChainDefinitionMap.put("/**","authc");
+        filterChainDefinitionMap.put("/v2/**","anon");
+        filterChainDefinitionMap.put("/**","authc");
         shiroFilterFactoryBean.setLoginUrl("/login/login");
         shiroFilterFactoryBean.setSuccessUrl("/user/info");
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
