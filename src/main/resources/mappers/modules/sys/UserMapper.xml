@@ -26,10 +26,10 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-      id,company_id,office_id,login_name,password,no,name,email,phone,
+      id,company_id,office_id,login_name,password,no,name,email,phone
   </sql>
 
-  <select id="findUserByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+  <select id="findUserByName" resultMap="UserResult" parameterType="java.lang.String">
     select
     <include refid="Base_Column_List" />
     from sys_user
