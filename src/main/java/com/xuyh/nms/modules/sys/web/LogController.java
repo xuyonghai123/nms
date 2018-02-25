@@ -65,10 +65,10 @@ public class LogController {
     @RequestMapping(value = "/login/logout",method = RequestMethod.POST)
     public String logOut(){
         logger.info("登出系统");
-        List<Datas> list = dataMapper.findData();
+//        List<Datas> list = dataMapper.findData();
         User user =  userMapper.findUserByName("admin");
         logger.info("user:"+user);
-        logger.info("list:"+list);
+//        logger.info("list:"+list);
         return "success";
     }
 

@@ -2,6 +2,7 @@ package com.xuyh.nms.common.config;
 
 import com.xuyh.nms.common.shiro.AuthorizationFilter;
 import com.xuyh.nms.common.shiro.MyShiroRealm;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -53,7 +54,18 @@ public class ShiroConfiguration {
 
     @Bean
     public MyShiroRealm myShiroRealm(){
-        return new MyShiroRealm();
+        MyShiroRealm myShiroRealm = new MyShiroRealm();
+        myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+        return myShiroRealm;
+    }
+
+    @Bean
+    public HashedCredentialsMatcher hashedCredentialsMatcher() {
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        hashedCredentialsMatcher.setHashAlgorithmName("SHA-1");// 散列算法:这里使用MD5算法;
+        hashedCredentialsMatcher.setHashIterations(1024);// 散列的次数，比如散列两次，相当于md5(md5(""));
+        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);//表示是否存储散列后的密码为16进制，需要和生成密码时的一样，默认是base64；
+        return hashedCredentialsMatcher;
     }
 
     @Bean

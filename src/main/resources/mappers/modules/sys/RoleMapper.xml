@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuyh.nms.modules.sys.dao.RoleMapper">
+  <resultMap id="RoleResult" type="com.xuyh.nms.modules.sys.entity.Role">
+    <id property="id" column="id"/>
+    <result property="officeId" column="office_id"/>
+    <result property="name" column="name"/>
+    <result property="enName" column="enname"/>
+    <result property="roleType" column="role_type"/>
+    <result property="dataScope" column="data_scope"/>
+    <result property="isSys" column="is_sys"/>
+    <result property="useAble" column="useable"/>
+    <result property="createBy" column="create_by"/>
+    <result property="createDate" column="create_date"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="updateDate" column="update_date"/>
+    <result property="remarks" column="remarks"/>
+    <result property="delFlag" column="del_flag"/>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+      id,office_id,name,enname,role_type,data_scope,is_sys,useable,create_by,create_date,update_by,update_date,
+      remarks,del_flag
+  </sql>
+
+  <select id="findRoleByName" resultMap="RoleResult" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from sys_role
+    where name = #{name}
+  </select>
+</mapper>

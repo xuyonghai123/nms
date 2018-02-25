@@ -34,11 +34,11 @@ public class NmsApplicationTests {
 	@Test
 	public void redisUser() throws Exception{
 		User user = new User();
-		user.setEnable(1);
+		user.setId(1);
 		user.setId(1);
 		user.setPassword("qwert");
-		user.setUsername("ashdisad");
-		redisTemplate.opsForValue().set(user.getUsername(),user);
+		user.setName("ashdisad");
+		redisTemplate.opsForValue().set(user.getName(),user);
 
 		Assert.assertEquals("qwert", redisTemplate.opsForValue().get("ashdisad").getPassword());
 		System.out.println("redis:"+redisTemplate.opsForValue().get("ashdisad").getPassword());
