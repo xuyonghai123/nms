@@ -1,6 +1,7 @@
 package com.xuyh.nms.modules.sys.entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Datas {
     private Integer id;
@@ -39,6 +40,24 @@ public class Datas {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Datas datas = (Datas) o;
+        return Objects.equals(id, datas.id) &&
+                Objects.equals(date, datas.date) &&
+                Objects.equals(name, datas.name) &&
+                Objects.equals(address, datas.address) &&
+                Objects.equals(zip, datas.zip);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, date, name, address, zip);
     }
 
     public String getAddress() {

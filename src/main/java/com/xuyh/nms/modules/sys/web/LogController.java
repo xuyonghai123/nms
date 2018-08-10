@@ -99,21 +99,22 @@ public class LogController {
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/api/findOrder",method = RequestMethod.POST)
     public List<Datas> findOrder(){
-        List<Datas> list = new ArrayList<>();
-        Datas datas = new Datas();
-        datas.setId(1);
-        datas.setName("xuyh");
-        datas.setDate(new Date());
-        datas.setAddress("qweihdishdi");
-        datas.setZip("11111111");
-        Datas datas1 = new Datas();
-        datas1.setId(2);
-        datas1.setName("yhj");
-        datas1.setDate(new Date());
-        datas1.setAddress("qqqqqqqqqqqqq");
-        datas1.setZip("2222222222222");
-        list.add(datas);
-        list.add(datas1);
+//        List<Datas> list = new ArrayList<>();
+//        Datas datas = new Datas();
+//        datas.setId(1);
+//        datas.setName("xuyh");
+//        datas.setDate(new Date());
+//        datas.setAddress("qweihdishdi");
+//        datas.setZip("11111111");
+//        Datas datas1 = new Datas();
+//        datas1.setId(2);
+//        datas1.setName("yhj");
+//        datas1.setDate(new Date());
+//        datas1.setAddress("qqqqqqqqqqqqq");
+//        datas1.setZip("2222222222222");
+//        list.add(datas);
+//        list.add(datas1);
+        List<Datas> list = dataMapper.findData();
         return list;
     }
 
